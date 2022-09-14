@@ -1,13 +1,15 @@
 require("dotenv").config()
 
-switch(process.argv[2]) {
-        case "test" : process.env.BOOL = false; break;
-        case "dev" : process.env.BOOL = false; break;
-        default: console.error("Expected 1 argument")
-}
+const env = process.argv[2] || "development"
 
 module.exports = {
-    ENV : process.env.ENV || "development",
-    MY_VAR : process.env.MY_VAR || "Default Var",
-    BOOL : process.env.BOOL || false,
+    test : {
+        ENV : "test",
+        MY_VAR : "Hello Test",
+        BOOL : "false", 
+    },
+}[env] || {
+    ENV : process.env.ENV,
+    MY_VAR : process.env.MY_VAR,
+    BOOL : process.env.BOOL, 
 }
