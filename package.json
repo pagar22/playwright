@@ -5,15 +5,26 @@
   "main": "server.js",
   "scripts": {
     "test": "playwright",
-    "dev": "set MY_VAR=byee && node server.js"
+    "dev": "set MY_VAR=byee && node server.js",
+    "lint": "eslint . --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.25.1"
+    "@playwright/test": "^1.25.1",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.37.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "typescript": "^4.8.3"
   },
   "dependencies": {
-    "dotenv": "^16.0.2"
+    "dotenv": "^16.0.2",
+    "eslint": "^8.0.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-native": "^4.0.0"
   }
 }
